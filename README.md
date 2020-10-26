@@ -1,5 +1,5 @@
 # Pi-cooler
-Pi-cooler is a Raspberry Pi's cooler fan controller software. It can be used to attach a cooler fan to a Raspberry Pi and control it so that it can be turned on when necessary and turned off when unnecessary. Also, this software can be used to attach a power button that can be used to reboot and power off your Rasberry Pi, supporting the appropriate indicator LEDs.
+Pi-cooler is a Raspberry Pi's cooler fan controller software. It can be used to attach a cooler fan to a Raspberry Pi and control it so that it can be turned on when necessary and turned off when unnecessary. Also, this software can be used to attach a power button to reboot and power off your Rasberry Pi, supporting the appropriate indicator LEDs.
 
 ## Why do I need this?
 
