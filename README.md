@@ -11,13 +11,13 @@ You may need Pi-cooler, for instance, in these situations:
 
 ## Is my hardware compatible?
 
-To control a 3-volt cooler fan, you can just plug it into any appropriate free pin on the GPIO.  
+To control a 3-volt cooler fan, you can just plug it into any appropriate available pin on the GPIO.  
 ![Representation of the 3-volt cooler fan circuit](circuit-examples/3v-CoolerFan.png)  
   
 To control a 5-volt cooler fan, you will also need a NPN or PNP transistor.  
 ![Representation of the 5-volt cooler fan circuit](circuit-examples/5v-CoolerFan.png)  
   
-To attach a power button, you just need a button connected into any appropriate free pin on the GPIO, just as the LEDs do.  
+To attach a power button, you just need a button connected into any appropriate available pin on the GPIO, just as the LEDs do.  
 ![Representation of the button circuit](circuit-examples/Button.png)  
 ![Representation of the LED circuit](circuit-examples/LED.png)
 
