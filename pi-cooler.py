@@ -83,14 +83,8 @@ class PowerLED(HwController):
 		if self.initialized:
 			return
 		HwController.initialize(self)
-		self.ioPin = gpiozero.PWMLED(self.pin, active_high=not self.reversed)
+		self.ioPin = gpiozero.LED(self.pin, active_high=not self.reversed)
 		self.ioPin.off()
-
-	def fadeIn(self):
-		if not self.initialized:
-			return
-		self.ioPin.on()
-		self.ioPin.blink(fade_in_time=BUTTON_PRESS_TIMEOUT, on_time=BUTTON_PRESS_TIMEOUT, off_time=0, n=2)
 	
 	def blink(self, start: int, end: int = 5):
 		if not self.initialized:
@@ -100,7 +94,7 @@ class PowerLED(HwController):
 		elif start <= end:
 			time = LED_BLINK_MIN_TIME + start/end * (LED_BLINK_MAX_TIME - LED_BLINK_MIN_TIME)
 			n = int(BUTTON_PRESS_TIMEOUT/time) + 2
-			self.ioPin.pulse(fade_in_time=time/2, fade_out_time=time/2, n=n)
+			self.ioPin.blink(on_time=time/2, off_time=time/2, n=n)
 		else:
 			self.ioPin.on()
 		
@@ -159,7 +153,7 @@ class PowerButton(HwController):
 			raise TypeError("Argument 'timeout' must be None, a float or an integer.")
 		if not self.ioPin.wait_for_press(timeout):
 			return False
-		if self.powerLED is not None: self.powerLED.fadeIn()
+		if self.powerLED is not None: self.powerLED.on()
 		if self.ioPin.wait_for_release(BUTTON_PRESS_TIMEOUT):
 			if self.powerLED is not None: self.powerLED.off()
 			return True
