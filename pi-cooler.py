@@ -194,7 +194,7 @@ class CoolerFan(HwController):
 	@staticmethod
 	def _tempValid(temp: str) -> bool:
 		try:
-			stop, start = CoolerFan._parseTemp(str)
+			stop, start = CoolerFan._parseTemp(temp)
 			if stop > start:
 				return False
 		except:
